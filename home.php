@@ -15,24 +15,21 @@
 
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a>
-                </li>
-                <li><a href="policelogin.php">Police Login</a></li>
-                <li><a href="inchargelogin.php">Incharge Login</a></li>
-                <li><a href="headlogin.php">Head Login</a></li>
-
-            </ul>
+        <div class="logo-section">
+            <a href="home.php"><img src="images/crs.png" /></a>
+            <button id="btn-home"><a href="home.php">Home</a></button>
+        </div>
+        <nav id="nbr">
+            <button id="btn"><a href="policelogin.php">Police Login</a></button>
+            <button id="btn"><a href="inchargelogin.php">Incharge Login</a></button>
+            <button id="btn"><a href="headlogin.php">Head Login</a></button>
         </nav>
     </header>
-
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="content">
                     <h1>Have a Complaint?</h1>
-
                     <hr>
                     <div class="login-buttons">
                         <div>
@@ -48,13 +45,14 @@
                                 Login</a>
                         </div>
                     </div>
+                    <hr>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="footer">
-        <h3>&copy;Crime Portal - 2023 (Kashmir)</h3>
+    <div id="footer">
+        <div id="ftr-txt">&copy;Crime Portal - 2023 (Kashmir)</div>
     </div>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
