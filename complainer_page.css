@@ -307,7 +307,7 @@ select.form-control {
   outline: none;
   letter-spacing: 1px;
   cursor: pointer;
-  -webkit-appearance: none;
+  appearance: none;
   padding: 10px 15px;
   transition: 0.5s ease-in;
   -webkit-transition: 0.5s ease-in;
