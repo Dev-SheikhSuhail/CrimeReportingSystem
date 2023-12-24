@@ -79,60 +79,84 @@ function f1() {
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="complainer_page.css">
+    <link rel="stylesheet" href="reg-styles.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="home.php"><b>Crime Portal</b></a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="registration.php">Registration</a></li>
-                </ul>
-            </div>
+    <header>
+        <div class="logo-section">
+            <a href="home.php"><img src="images/crs.png" /></a>
+            <button id="btn-home"><a href="home.php">Crime Portal</a></button>
         </div>
-    </nav>
-
+        <nav id="nbr">
+            <button id="btn"><a href="userlogin.php">Login</a></button>
+        </nav>
+    </header>
+    <!-- <header>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="home.php"><b>Crime Portal</b></a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="registration.php">Registration</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header> -->
     <div class="video">
         <div class="center-container">
             <div class="bg-agile">
                 <div class="login-form">
+                    <p id="para">User Registration</p>
                     <form action="#" method="post">
-                        <p style="color:#dfdfdf">Full Name</p><input type="text" name="name" required="" id="name1"
-                            onfocusout="f1()" />
-                        <p style="color:#dfdfdf">Email-ID</p><input type="email" name="email" required="" id="email1"
-                            onfocusout="f1()" />
-                        <p style="color:#dfdfdf">Password</p><input type="text" name="password"
-                            placeholder="6 Characters Minimum" pattern=".{6,}" id="pass" onfocusout="f1()" />
-                        <p style="color:#dfdfdf">Home Address</p><input type="text" name="adress" required="" id="addr"
-                            onfocusout="f1()" />
-                        <p style="color:#dfdfdf">Aadhar Number</p><input type="text" name="aadhar_number" minlength="12"
-                            maxlength="12" required pattern="[123456789][0-9]{11}" id="aadh" onfocusout="f1()" />
+                        <p>Full Name</p><input type="text" name="name" required="" id="name1" onfocusout="f1()" />
+                        <p>Email-ID</p><input type="email" name="email" required="" id="email1" onfocusout="f1()" />
+                        <p>Password</p><input type="password" name="password" placeholder="Minimum 6 Characters"
+                            pattern=".{6,}" id="pass" onfocusout="f1()" />
                         <div class="left-w3-agile">
-                            <p style="color:#dfdfdf">Gender</p><select class="form-control" name="gender">
-                                <option>Male</option>
-                                <option>Female</option>
-                                <option>Other</option>
-                            </select>
+                            <div id="h-addr">
+                                <p>Home Address</p><input type="text" name="adress" required="" id="addr"
+                                    onfocusout="f1()" />
+                            </div>
+                            <div id="u-gen">
+                                <p>Gender</p><select class="form-control" name="gender">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="right-agileits">
-                            <p style="color:#dfdfdf">Mobile</p><input type="text" name="mobile_number" required
-                                pattern="[6789][0-9]{9}" minlength="10" maxlength="10" id="mobno" onfocusout="f1()" />
+                        <div class="left-w3-agile">
+                            <div id="aadhr">
+                                <p>Aadhar Number</p><input type="text" name="aadhar_number" minlength="12"
+                                    maxlength="12" required pattern="[123456789][0-9]{11}" id="aadh"
+                                    onfocusout="f1()" />
+                            </div>
+                            <div id="mobl">
+                                <p>Mobile</p><input type="text" name="mobile_number" required pattern="[6789][0-9]{9}"
+                                    minlength="10" maxlength="10" id="mobno" onfocusout="f1()" />
+                            </div>
                         </div>
+
+
                         <input type="submit" value="Submit" name="s">
                     </form>
                 </div>
             </div>
         </div>
+    </div>
+    <div id="footer">
+        <div id="ftr-txt">&copy;Crime Portal - 2023 (Kashmir)</div>
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
