@@ -5,7 +5,6 @@
 }
 html,
 body,
-div,
 span,
 applet,
 object,
@@ -29,7 +28,6 @@ code,
 del,
 dfn,
 em,
-img,
 ins,
 kbd,
 q,
@@ -261,46 +259,47 @@ ul.icons-text li:nth-child(2) {
 }
 .login-form input[type="text"],
 .login-form input[type="email"],
+.login-form input[type="password"],
 .form-control,
 textarea {
   width: 95.4%;
-  padding: 10px 10px 10px 10px;
+  padding: 8px;
   font-weight: normal;
   background: none;
   border: none;
-  background: rgba(235, 235, 235, 0.15);
+  background: rgb(86 70 70 / 97%);
   color: #ffffff !important;
   outline: none;
   font-size: 14px;
-  margin: 6px 0 17px 0px;
-  transition: 0.5s all;
+  margin-bottom: 10px;
+  /* transition: 0.5s all;
   -webkit-transition: 0.5s all;
   -o-transition: 0.5s all;
   -ms-transition: 0.5s all;
-  -moz-transition: 0.5s all;
+  -moz-transition: 0.5s all; */
 }
 textarea {
   resize: none;
   height: 88px;
 }
 select.form-control {
-  width: 106%;
-  padding: 9px 10px;
+  width: auto;
+  height: 36px;
+  padding: 0 10px;
 }
-/*.login-form input[type="text"]:hover,.login-form input[type="email"]:hover,textarea:hover {
-    border: 1px solid #5b2f3f;	
-	transition:0.5s all;
-	-webkit-transition:0.5s all;
-	-o-transition:0.5s all;
-	-ms-transition:0.5s all;
-	-moz-transition:0.5s all;
-}*/
+.login-form input[type="text"]:hover,
+.login-form input[type="email"]:hover,
+.login-form input[type="password"]:hover,
+textarea:hover,
+select:hover {
+  border: 1px solid #f5f5f5;
+}
 
 .login-form input[type="submit"],
 .agile_main_grid_left2_grid_bottom a {
-  background: #31c4fc;
+  background: teal;
   color: #fff;
-  font-size: 17px;
+  font-size: 20px;
   margin-top: 10px;
   border: none;
   width: 100%;
@@ -308,17 +307,19 @@ select.form-control {
   letter-spacing: 1px;
   cursor: pointer;
   appearance: none;
-  padding: 10px 15px;
+  padding: 8px 15px;
   transition: 0.5s ease-in;
   -webkit-transition: 0.5s ease-in;
   -moz-transition: 0.5s ease-in;
   -o-transition: 0.5s ease-in;
   -ms-transition: 0.5s ease-in;
+  border-radius: 8px;
 }
 .login-form input[type="submit"]:hover,
 .agile_main_grid_left2_grid_bottom a:hover {
-  background: #5fe3f8;
+  background: #29518d;
   color: #fff;
+  font-size: 22px;
   transition: 0.5s ease-in;
   -webkit-transition: 0.5s ease-in;
   -moz-transition: 0.5s ease-in;
@@ -376,25 +377,26 @@ option {
 /*--//copyright--*/
 
 /*--responsive--*/
-@media (max-width: 1600px) {
-}
 @media (max-width: 1440px) {
   .top-icons-agileits-w3layouts {
     width: 78%;
   }
   .login-form input[type="text"],
   .login-form input[type="email"],
+  .login-form input[type="password"],
   .form-control,
   textarea {
-    width: 94.8%;
+    width: 100%;
   }
 }
-@media (max-width: 1366px) {
+@media (min-width: 1300px) {
   .top-icons-agileits-w3layouts {
     width: 82%;
   }
   .bg-agile {
-    width: 32%;
+    width: 40%;
+    margin: 1px auto;
+    padding: 12px 28px;
   }
 }
 @media (max-width: 1280px) {
@@ -810,4 +812,37 @@ option {
     width: 92%;
   }
 }
-/*--responsive--*/
+
+#ftr-txt {
+  display: flex;
+  background: #2c3e3e;
+  height: 30px;
+  font-size: 18px;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+header {
+  background-color: #447d7d;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  justify-content: space-between;
+  padding: 0 6px;
+}
+.left-w3-agile {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+#h-addr,
+#u-gen,
+#mobl,
+#aadhr {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
