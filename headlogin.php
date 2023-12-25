@@ -10,6 +10,7 @@
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="user-styles.css">
+    <link rel="stylesheet" href="reg-styles.css">
     <?php
 
     if (isset($_POST['s'])) {
@@ -39,7 +40,14 @@
 
 <body
     style="color: black;background-image: url(images/locker.jpeg);background-size: 100%;background-repeat: no-repeat;">
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <header>
+        <div class="logo-section">
+            <a href="home.php"><img src="images/crs.png" /></a>
+            <button id="btn-home"><a href="home.php">Crime Portal</a></button>
+        </div>
+        <div style="font-size:24px;">Head Login</div>
+    </header>
+    <!-- <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand" href="home.php"><b>Crime Portal</b></a>
@@ -51,7 +59,7 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
     <div align="center">
         <div class="form" style="margin-top: 15%">
             <form method="post">
@@ -60,7 +68,7 @@
                         <h1 style="color:white">Head ID</h1>
                     </label>
                     <input type="email" name="email" class="form-control" id="exampleInputEmail1"
-                        aria-describedby="emailHelp" size="5" placeholder="Enter User ID" required>
+                        aria-describedby="emailHelp" size="5" placeholder="Enter ID" required>
                 </div>
                 <div class="form-group" style="width:30%">
                     <label for="exampleInputPassword1">
@@ -69,7 +77,7 @@
                     <input type="password" name="password" class="form-control" id="exampleInputPassword1"
                         placeholder="Password" required>
                 </div>
-                <button type="submit" class="btn btn-primary" name="s">Submit</button>
+                <button type="submit" class="btn btn-primary" id="bttn" name="s">Login</button>
             </form>
         </div>
     </div>

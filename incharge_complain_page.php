@@ -10,6 +10,7 @@
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="user-styles.css">
+    <link rel="stylesheet" href="reg-styles.css">
     <?php
     session_start();
     if (!isset($_SESSION['x']))
@@ -38,7 +39,7 @@
             $loc = $q['location'];
 
             if (strcmp("$loc", "$location") != 0) {
-                $msg = "Case Not of your Location";
+                $msg = "Case not of your Location";
                 echo "<script type='text/javascript'>alert('$msg');</script>";
             } else if (strcmp("$inc_st", "Unassigned") == 0) {
                 header("location:Incharge_complain_details.php");
@@ -64,35 +65,20 @@
 </head>
 
 <body style="background-color: #dfdfdf">
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="home.php"><b>Crime Portal</b></a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="official_login.php">Official Login</a></li>
-                    <li><a href="inchargelogin.php">Incharge Login</a></li>
-                    <li class="active"><a href="Incharge_complain_page.php">Incharge Home</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="Incharge_complain_page.php">View Complaints</a></li>
-                    <li><a href="incharge_view_police.php">Police Officers</a></li>
-                    <li><a href="inc_logout.php">Logout &nbsp <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
+    <header>
+        <div class="logo-section">
+            <a href="home.php"><img src="images/crs.png" /></a>
+            <button id="btn-home"><a href="home.php">Home</a></button>
         </div>
-    </nav>
+        <nav id="nbr">
+            <button id="btn"><a href="incharge_view_police.php">Police Officers</a></button>
+            <button id="btn"><a href="inc_logout.php">Logout</a></button>
+        </nav>
+    </header>
 
     <form style="margin-top: 7%; margin-left: 40%;" method="post">
-        <input type="text" name="cid" style="width: 250px; height: 30px; background-color:white;"
+        <input type="text" name="cid"
+            style="width: 250px; height: 40px; background: #141212; color: white; border:2px solid white;border-radius: 8px;"
             placeholder="&nbsp Complaint ID" id="ciid" onfocusout="f1()" required>
         <div>
             <input class="btn btn-primary" type="submit" value="Search" name="s2"
@@ -116,7 +102,7 @@
             <?php
             while ($rows = mysqli_fetch_assoc($result)) {
                 ?>
-                <tbody style="background-color: white; color: black;">
+                <tbody style="background-color: #543030; color: black;">
                     <tr>
                         <td>
                             <?php echo $rows['c_id']; ?>

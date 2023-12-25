@@ -62,15 +62,15 @@ if (isset($_POST['s'])) {
 ?>
 
 <script>
-function f1() {
-    var sta1 = document.getElementById("desc").value;
-    var x1 = sta1.trim();
-    if (sta1 != "" && x1 == "") {
-        document.getElementById("desc").value = "";
-        document.getElementById("desc").focus();
-        alert("Space Found");
+    function f1() {
+        var sta1 = document.getElementById("desc").value;
+        var x1 = sta1.trim();
+        if (sta1 != "" && x1 == "") {
+            document.getElementById("desc").value = "";
+            document.getElementById("desc").focus();
+            alert("Space Found");
+        }
     }
-}
 </script>
 
 <head>
@@ -83,10 +83,21 @@ function f1() {
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="complainer_page.css">
     <link rel="stylesheet" href="user-styles.css">
+    <link rel="stylesheet" href="reg-styles.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <header>
+        <div class="logo-section">
+            <a href="home.php"><img src="images/crs.png" /></a>
+            <button id="btn-home"><a href="home.php">Crime Portal</a></button>
+        </div>
+        <nav id="nbr">
+            <button id="btn"><a href="complainer_complain_history.php">Complaint History</a></button>
+            <button id="btn"><a href="logout.php">Logout</a></button>
+        </nav>
+    </header>
+    <!-- <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -111,13 +122,12 @@ function f1() {
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
 
     <div class="video" style="margin-top: 5%">
         <div class="center-container">
             <div class="bg-agile">
-                <br><br>
                 <div class="login-form">
                     <p>
                     <h2 style="color:white">Welcome
@@ -138,10 +148,10 @@ function f1() {
                                 $loc = mysqli_query($conn, "select location from police_station");
                                 while ($row = mysqli_fetch_array($loc)) {
                                     ?>
-                                <option>
-                                    <?php echo $row[0]; ?>
-                                </option>
-                                <?php
+                                    <option>
+                                        <?php echo $row[0]; ?>
+                                    </option>
+                                    <?php
                                 }
                                 ?>
 

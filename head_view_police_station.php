@@ -23,36 +23,22 @@
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="user-styles.css">
+    <link rel="stylesheet" href="reg-styles.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="home.php"><b>Crime Portal</b></a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="official_login.php">Official Login</a></li>
-
-                    <li><a href="headlogin.php">Head Login</a></li>
-                    <li class="active"><a href="head_view_police_station.php">Head Home</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="headHome.php">View Complaints</a></li>
-                    <li class="active"><a href="head_view_police_station.php">Police Stations</a></li>
-                    <li><a href="h_logout.php">Logout &nbsp <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
+    <header>
+        <div class="logo-section">
+            <a href="home.php"><img src="images/crs.png" /></a>
+            <button id="btn-home"><a href="home.php">Home</a></button>
         </div>
-    </nav>
+        <nav id="nbr">
+            <button id="btn"><a href="headHome.php">Search Complaint</a></button>
+            <button id="btn"><a href="h_logout.php">Logout</a></button>
+            <!-- <button id="btn"><a href="headlogin.php">Head Login</a></button> -->
+        </nav>
+    </header>
+
 
     <div style="margin-top: 10%;margin-left: 45%">
         <a href="police_station_add.php" class="btn btn-primary">Add Police Station</a>
@@ -60,7 +46,7 @@
 
     <div style="padding:50px;">
         <table class="table table-bordered">
-            <thead class="thead-dark" style="background-color: black; color: white;">
+            <thead class="thead-dark" style="background-color: black; color: white; font-size: 22px;">
                 <tr>
                     <th scope="col">Incharge ID</th>
                     <th scope="col">Incharge Name</th>
@@ -71,7 +57,7 @@
             while ($rows = mysqli_fetch_assoc($result)) {
                 ?>
 
-            <tbody style="background-color: white; color: black;">
+            <tbody style="background-color:#543030; color: black;">
                 <tr>
                     <td>
                         <?php echo $rows['i_id']; ?>

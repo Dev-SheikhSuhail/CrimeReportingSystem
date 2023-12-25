@@ -39,52 +39,39 @@
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="user-styles.css">
+    <link rel="stylesheet" href="reg-styles.css">
+
     <script>
-        function f1() {
+    function f1() {
 
-            var sta2 = document.getElementById("ciid").value;
-            var x2 = sta2.indexOf(' ');
+        var sta2 = document.getElementById("ciid").value;
+        var x2 = sta2.indexOf(' ');
 
-            if (sta2 != "" && x2 >= 0) {
-                document.getElementById("ciid").value = "";
-                alert("Blank Field Not Allowed");
-            }
+        if (sta2 != "" && x2 >= 0) {
+            document.getElementById("ciid").value = "";
+            alert("Blank Field Not Allowed");
         }
+    }
     </script>
 </head>
 
 <body style="background-image: url(images/search1.jpeg); ">
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="home.php"><b>Crime Portal</b></a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="official_login.php">Official Login</a></li>
-                    <li><a href="headlogin.php">Head Login</a></li>
-                    <li class="active"><a href="headHome.php">Head Home</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="headHome.php">View Complaints</a></li>
-                    <li><a href="head_view_police_station.php">Police Stations</a></li>
-                    <li><a href="h_logout.php">Logout &nbsp <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
+    <header>
+        <div class="logo-section">
+            <a href="home.php"><img src="images/crs.png" /></a>
+            <button id="btn-home"><a href="home.php">Home</a></button>
         </div>
-    </nav>
+        <nav id="nbr">
+            <button id="btn"><a href="head_view_police_station.php">Police Stations</a></button>
+            <button id="btn"><a href="h_logout.php">Logout</a></button>
+        </nav>
+    </header>
 
     <div>
         <form style="margin-top: 10%; margin-left: 40%;" method="post">
-            <input type="text" name="cid" style="width: 250px; height: 30px;" placeholder="&nbsp Complaint ID" id="ciid"
-                onfocusout="f1()" required>
+            <input type="text" name="cid"
+                style="width: 250px; height: 40px; background: #141212; color: white; border:2px solid white;border-radius: 8px;"
+                placeholder="&nbsp Complaint ID" id="ciid" onfocusout="f1()" required>
             <div>
                 <input class="btn btn-primary" type="submit" value="Search" name="s1"
                     style="margin-top: 10px; margin-left: 11%;">
@@ -92,16 +79,17 @@
         </form>
 
         <form style="margin-top: 3%; margin-left: 40%;" method="post">
-            <select name="loc" class="form-control" style="width: 250px;">
+            <select name="loc" class="form-control"
+                style="width: 250px; background: #141212; color: white;height: 40px;border:2px solid white;border-radius: 8px;">
 
                 <?php
                 $loc = mysqli_query($conn, "select location from police_station");
                 while ($row = mysqli_fetch_array($loc)) {
                     ?>
-                    <option>
-                        <?php echo $row[0]; ?>
-                    </option>
-                    <?php
+                <option>
+                    <?php echo $row[0]; ?>
+                </option>
+                <?php
                 }
                 ?>
             </select>

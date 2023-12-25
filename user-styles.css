@@ -19,5 +19,7 @@ body {
   font-size: 18px;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
