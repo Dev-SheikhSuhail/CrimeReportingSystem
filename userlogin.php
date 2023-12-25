@@ -10,6 +10,7 @@
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="user-styles.css">
+    <link rel="stylesheet" href="reg-styles.css">
     <?php
     if (isset($_POST['s'])) {
         session_start();
@@ -38,41 +39,37 @@
     }
     ?>
     <script>
-        function f1() {
-            var sta2 = document.getElementById("exampleInputEmail1").value;
-            var sta3 = document.getElementById("exampleInputPassword1").value;
-            var x2 = sta2.indexOf(' ');
-            var x3 = sta3.indexOf(' ');
-            if (sta2 != "" && x2 >= 0) {
-                document.getElementById("exampleInputEmail1").value = "";
-                document.getElementById("exampleInputEmail1").focus();
-                alert("Space Not Allowed");
-            } else if (sta3 != "" && x3 >= 0) {
-                document.getElementById("exampleInputPassword1").value = "";
-                document.getElementById("exampleInputPassword1").focus();
-                alert("Space Not Allowed");
-            }
-
+    function f1() {
+        var sta2 = document.getElementById("exampleInputEmail1").value;
+        var sta3 = document.getElementById("exampleInputPassword1").value;
+        var x2 = sta2.indexOf(' ');
+        var x3 = sta3.indexOf(' ');
+        if (sta2 != "" && x2 >= 0) {
+            document.getElementById("exampleInputEmail1").value = "";
+            document.getElementById("exampleInputEmail1").focus();
+            alert("Space Not Allowed");
+        } else if (sta3 != "" && x3 >= 0) {
+            document.getElementById("exampleInputPassword1").value = "";
+            document.getElementById("exampleInputPassword1").focus();
+            alert("Space Not Allowed");
         }
+
+    }
     </script>
 </head>
 
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top" style="height: 60px;">
-        <div class="container">
-            <div class="navbar-header">
-
-                <a class="navbar-brand" href="home.php" style="margin-top: 5%;"><b>Crime Portal</b></a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active" style="margin-top: 5%;"><a href="userlogin.php">User Login</a></li>
-                </ul>
-
-
-            </div>
+    <header>
+        <div class="logo-section">
+            <a href="home.php"><img src="images/crs.png" /></a>
+            <button id="btn-home"><a href="home.php">Crime Portal</a></button>
         </div>
-    </nav>
+        <div style="font-size:24px;">User Login</div>
+        <!-- <nav id="nbr">
+            <button id="btn"><a href="userlogin.php">User Login</a></button>
+        </nav> -->
+    </header>
+
     <div align="center">
         <div class="form" style="margin-top: 10%">
             <form method="post">
@@ -91,7 +88,7 @@
                         required name="password" onfocusout="f1()">
                 </div>
 
-                <button type="submit" class="btn btn-primary" name="s" onclick="f1()">Submit</button>
+                <button type="submit" class="btn btn-primary" id="bttn" name="s" onclick="f1()">Login</button>
             </form>
         </div>
     </div>

@@ -10,6 +10,7 @@
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="user-styles.css">
+    <link rel="stylesheet" href="reg-styles.css">
     <?php
     session_start();
     if (!isset($_SESSION['x']))
@@ -21,7 +22,7 @@
     }
 
     $i_id = $_SESSION['email'];
-    print_r($i_id);
+    // print_r($i_id);
     $result1 = mysqli_query($conn, "SELECT location FROM police_station where i_id='$i_id'");
 
     $q2 = mysqli_fetch_assoc($result1);
@@ -40,47 +41,31 @@
     $result = mysqli_query($conn, "select p_id,p_name,spec,location from police where location='$location'");
     ?>
     <script>
-        function f1() {
+    function f1() {
 
-            var sta2 = document.getElementById("ciid").value;
-            var x2 = sta2.indexOf(' ');
-            if (sta2 != "" && x2 >= 0) {
-                document.getElementById("ciid").value = "";
-                alert("Blank Field Not Allowed");
-            }
-
+        var sta2 = document.getElementById("ciid").value;
+        var x2 = sta2.indexOf(' ');
+        if (sta2 != "" && x2 >= 0) {
+            document.getElementById("ciid").value = "";
+            alert("Blank Field Not Allowed");
         }
+
+    }
     </script>
 </head>
 
 <body style="background-color: #dfdfdf">
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="home.php"><b>Crime Portal</b></a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-
-                <ul class="nav navbar-nav">
-                    <li><a href="official_login.php">Official Login</a></li>
-                    <li><a href="inchargelogin.php">Incharge Login</a></li>
-                    <li class="active"><a href="incharge_view_police.php">Incharge Home</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="Incharge_complain_page.php">View Complaints</a></li>
-                    <li class="active"><a href="incharge_view_police.php">Police Officers</a></li>
-                    <li><a href="inc_logout.php">Logout &nbsp <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
+    <header>
+        <div class="logo-section">
+            <a href="home.php"><img src="images/crs.png" /></a>
+            <button id="btn-home"><a href="home.php">Home</a></button>
         </div>
-    </nav>
+        <nav id="nbr">
+            <button id="btn"><a href="Incharge_complain_page.php">View Complaints</a></button>
+            <button id="btn"><a href="inc_logout.php">Logout</a></button>
+        </nav>
+    </header>
+
     <div style="margin-top: 10%;margin-left: 45%">
         <a href="police_add.php"><input type="button" name="add" value="Add Police Officer" class="btn btn-primary"></a>
     </div>
@@ -100,35 +85,36 @@
             while ($rows = mysqli_fetch_assoc($result)) {
                 ?>
 
-                <tbody style="background-color: white; color: black;">
-                    <tr>
-                        <td>
-                            <?php echo $rows['p_id']; ?>
-                        </td>
-                        <td>
-                            <?php echo $rows['p_name']; ?>
-                        </td>
-                        <td>
-                            <?php echo $rows['spec']; ?>
-                        </td>
-                        <td>
-                            <?php echo $rows['location']; ?>
-                        </td>
-                    </tr>
-                </tbody>
+            <tbody style="background-color: #543030; color: black;">
+                <tr>
+                    <td>
+                        <?php echo $rows['p_id']; ?>
+                    </td>
+                    <td>
+                        <?php echo $rows['p_name']; ?>
+                    </td>
+                    <td>
+                        <?php echo $rows['spec']; ?>
+                    </td>
+                    <td>
+                        <?php echo $rows['location']; ?>
+                    </td>
+                </tr>
+            </tbody>
 
-                <?php
+            <?php
             }
             ?>
         </table>
     </div>
 
     <form style="margin-top: 5%; margin-left: 40%;" method="post">
-        <input type="text" name="pid" style="width: 250px; height: 30px; background-color:white;"
+        <input type="text" name="pid"
+            style="width: 250px; height: 30px; background: #141212; color: white; border:2px solid white;border-radius: 8px;"
             placeholder="&nbsp Police ID" id="ciid" onfocusout="f1()" required>
         <div>
-            <input class="btn btn-danger" type="submit" value="Delete Police" name="s2"
-                style="margin-top: 10px; margin-left: 9%;">
+            <input class="btn btn-danger" type="submit" value="Remove Officer" name="s2"
+                style="margin-top: 10px; margin-left: 9%; border-radius: 8px;">
         </div>
     </form>
     <div id="footer">

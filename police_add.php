@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="complainer_page.css">
     <link rel="stylesheet" href="user-styles.css">
+    <link rel="stylesheet" href="reg-styles.css">
     <?php
     session_start();
     if (!isset($_SESSION['x']))
@@ -51,80 +52,64 @@
     }
     ?>
     <script>
-        function f1() {
-            var sta = document.getElementById("pname").value;
-            var sta1 = document.getElementById("pid").value;
-            var sta2 = document.getElementById("pspec").value;
-            var sta3 = document.getElementById("pas").value;
-            var x = sta.trim();
-            var x1 = sta1.indexOf(' ');
-            var x2 = sta2.trim();
-            var x3 = sta3.indexOf(' ');
-            if (sta != "" && x == "") {
-                document.getElementById("pname").value = "";
-                document.getElementById("pname1p").focus();
-                alert("Space Not Allowed");
-            } else if (sta1 != "" && x1 >= 0) {
-                document.getElementById("pid").value = "";
-                document.getElementById("pid").focus();
-                alert("Space Not Allowed");
-            } else if (sta2 != "" && x2 == "") {
-                document.getElementById("pspec").value = "";
-                document.getElementById("pspec").focus();
-                alert("Space Not Allowed");
-            } else if (sta3 != "" && x3 >= 0) {
-                document.getElementById("pas").value = "";
-                document.getElementById("pas").focus();
-                alert("Space Not Allowed");
-            }
+    function f1() {
+        var sta = document.getElementById("pname").value;
+        var sta1 = document.getElementById("pid").value;
+        var sta2 = document.getElementById("pspec").value;
+        var sta3 = document.getElementById("pas").value;
+        var x = sta.trim();
+        var x1 = sta1.indexOf(' ');
+        var x2 = sta2.trim();
+        var x3 = sta3.indexOf(' ');
+        if (sta != "" && x == "") {
+            document.getElementById("pname").value = "";
+            document.getElementById("pname1p").focus();
+            alert("Space Not Allowed");
+        } else if (sta1 != "" && x1 >= 0) {
+            document.getElementById("pid").value = "";
+            document.getElementById("pid").focus();
+            alert("Space Not Allowed");
+        } else if (sta2 != "" && x2 == "") {
+            document.getElementById("pspec").value = "";
+            document.getElementById("pspec").focus();
+            alert("Space Not Allowed");
+        } else if (sta3 != "" && x3 >= 0) {
+            document.getElementById("pas").value = "";
+            document.getElementById("pas").focus();
+            alert("Space Not Allowed");
         }
+    }
     </script>
 </head>
 
 <body style="background-size: cover;
-    background-image: url(home_bg1.jpeg);
+    background-image: url(images/regi_bg.jpeg);
     background-position: center;">
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="home.php"><b>Home</b></a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="official_login.php">Official Login</a></li>
-                    <li><a href="incharge_view_police.php">Incharge Home</a></li>
-                </ul>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="police_add.php">Add Police Officers</a></li>
-                    <li><a href="Incharge_complain_page.php">Complaint History</a></li>
-                    <li><a href="inc_logout.php">Logout &nbsp <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
+    <header>
+        <div class="logo-section">
+            <a href="home.php"><img src="images/crs.png" /></a>
+            <button id="btn-home"><a href="home.php">Home</a></button>
         </div>
-    </nav>
-    <div class="video" style="margin-top: 5%">
+        <nav id="nbr">
+            <button id="btn"><a href="incharge_view_police.php">View Officers</a></button>
+            <button id="btn"><a href="Incharge_complain_page.php">Complaints</a></button>
+            <button id="btn"><a href="h_logout.php">Logout</a></button>
+        </nav>
+    </header>
+
+    <div class="video" style="margin-top: 2%">
         <div class="center-container">
             <div class="bg-agile">
-                <br><br>
                 <div class="login-form">
                     <p>
                     <h2>Add Police Officer</h2>
                     </p><br>
                     <form action="#" method="post" style="color: gray">Police Name
-                        <input type="text" name="police_name" placeholder="Police Officer Name" required="" id="pname"
+                        <input type="text" name="police_name" placeholder="Officer Name" required="" id="pname"
                             onfocusout="f1()" />
-                        Police ID<input type="text" name="police_id" placeholder="Police ID" required="" id="pid"
+                        Police ID<input type="text" name="police_id" placeholder="Set Police ID" required="" id="pid"
                             onfocusout="f1()" />
-                        Specialist<input type="text" name="police_spec" placeholder="Specialist" id="pspec" required
-                            onfocusout="f1()" />
+                        Specialist<input type="text" name="police_spec" id="pspec" required onfocusout="f1()" />
 
                         Location of Police Officer<input type="text" required name="location" disabled
                             value="<?php echo "$location"; ?>">

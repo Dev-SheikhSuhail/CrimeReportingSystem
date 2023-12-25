@@ -10,6 +10,7 @@
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="user-styles.css">
+    <link rel="stylesheet" href="reg-styles.css">
     <?php
     if (isset($_POST['s'])) {
         session_start();
@@ -38,40 +39,34 @@
     }
     ?>
     <script>
-        function f1() {
+    function f1() {
 
-            var sta2 = document.getElementById("exampleInputEmail1").value;
-            var sta3 = document.getElementById("exampleInputPassword1").value;
-            var x2 = sta2.indexOf(' ');
-            var x3 = sta3.indexOf(' ');
-            if (sta2 != "" && x2 >= 0) {
-                document.getElementById("exampleInputEmail1").value = "";
-                document.getElementById("exampleInputEmail1").focus();
-                alert("Space Not Allowed");
-            } else if (sta3 != "" && x3 >= 0) {
-                document.getElementById("exampleInputPassword1").value = "";
-                document.getElementById("exampleInputPassword1").focus();
-                alert("Space Not Allowed");
-            }
+        var sta2 = document.getElementById("exampleInputEmail1").value;
+        var sta3 = document.getElementById("exampleInputPassword1").value;
+        var x2 = sta2.indexOf(' ');
+        var x3 = sta3.indexOf(' ');
+        if (sta2 != "" && x2 >= 0) {
+            document.getElementById("exampleInputEmail1").value = "";
+            document.getElementById("exampleInputEmail1").focus();
+            alert("Space Not Allowed");
+        } else if (sta3 != "" && x3 >= 0) {
+            document.getElementById("exampleInputPassword1").value = "";
+            document.getElementById("exampleInputPassword1").focus();
+            alert("Space Not Allowed");
         }
+    }
     </script>
 </head>
 
 <body
     style="color: black;background-image: url(images/locker.jpeg);background-size: 100%;background-repeat: no-repeat;">
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="home.php"><b>Crime Portal</b></a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="official_login.php">Official Login</a></li>
-                    <li class="active"><a href="policelogin.php">Police Login</a></li>
-                </ul>
-            </div>
+    <header>
+        <div class="logo-section">
+            <a href="home.php"><img src="images/crs.png" /></a>
+            <button id="btn-home"><a href="home.php">Crime Portal</a></button>
         </div>
-    </nav>
+        <div style="font-size: 24px;">Police Login</div>
+    </header>
     <div align="center">
         <div class="form" style="margin-top: 15%">
             <form method="post">
@@ -80,7 +75,7 @@
                         <h1 style="color:white">Police ID</h1>
                     </label>
                     <input type="text" name="email" class="form-control" id="exampleInputEmail1"
-                        aria-describedby="emailHelp" size="5" placeholder="Enter User ID" required onfocusout="f1()">
+                        aria-describedby="emailHelp" size="5" placeholder="Enter ID" required onfocusout="f1()">
                 </div>
                 <div class="form-group" style="width:30%">
                     <label for="exampleInputPassword1">
@@ -89,7 +84,7 @@
                     <input type="password" name="password" class="form-control" id="exampleInputPassword1"
                         placeholder="Password" required onfocusout="f1()">
                 </div>
-                <button type="submit" class="btn btn-primary" name="s">Submit</button>
+                <button type="submit" class="btn btn-primary" id="bttn" name="s">Login</button>
             </form>
         </div>
     </div>

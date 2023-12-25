@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="complainer_page.css">
     <link rel="stylesheet" href="user-styles.css">
+    <link rel="stylesheet" href="reg-styles.css">
     <?php
     session_start();
     if (!isset($_SESSION['x']))
@@ -40,40 +41,52 @@
     }
     ?>
     <script>
-        function f1() {
-            var sta = document.getElementById("station").value;
-            var sta1 = document.getElementById("iname").value;
-            var sta2 = document.getElementById("iid").value;
-            var sta3 = document.getElementById("pas").value;
-            var x = sta.trim();
-            var x2 = sta2.indexOf(' ');
-            var x1 = sta1.trim();
-            var x3 = sta3.indexOf(' ');
-            if (sta != "" && x == "") {
-                document.getElementById("station").value = "";
-                document.getElementById("station").focus();
-                alert("Space Not Allowed");
-            } else if (sta1 != "" && x1 == "") {
-                document.getElementById("iname").value = "";
-                document.getElementById("iname").focus();
-                alert("Space Not Allowed");
-            } else if (sta2 != "" && x2 >= 0) {
-                document.getElementById("iid").value = "";
-                document.getElementById("iid").focus();
-                alert("Space Not Allowed");
-            } else if (sta3 != "" && x3 >= 0) {
-                document.getElementById("pas").value = "";
-                document.getElementById("pas").focus();
-                alert("Space Not Allowed");
-            }
+    function f1() {
+        var sta = document.getElementById("station").value;
+        var sta1 = document.getElementById("iname").value;
+        var sta2 = document.getElementById("iid").value;
+        var sta3 = document.getElementById("pas").value;
+        var x = sta.trim();
+        var x2 = sta2.indexOf(' ');
+        var x1 = sta1.trim();
+        var x3 = sta3.indexOf(' ');
+        if (sta != "" && x == "") {
+            document.getElementById("station").value = "";
+            document.getElementById("station").focus();
+            alert("Space Not Allowed");
+        } else if (sta1 != "" && x1 == "") {
+            document.getElementById("iname").value = "";
+            document.getElementById("iname").focus();
+            alert("Space Not Allowed");
+        } else if (sta2 != "" && x2 >= 0) {
+            document.getElementById("iid").value = "";
+            document.getElementById("iid").focus();
+            alert("Space Not Allowed");
+        } else if (sta3 != "" && x3 >= 0) {
+            document.getElementById("pas").value = "";
+            document.getElementById("pas").focus();
+            alert("Space Not Allowed");
         }
+    }
     </script>
 </head>
 
 <body style="background-size: cover;
-    background-image: url(images/home_bg1.jpeg);
+    background-image: url(images/search1.jpeg);
     background-position: center;">
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <header>
+        <div class="logo-section">
+            <a href="home.php"><img src="images/crs.png" /></a>
+            <button id="btn-home"><a href="home.php">Home</a></button>
+        </div>
+        <nav id="nbr">
+            <button id="btn"><a href="head_view_police_station.php">View Police Stations</a></button>
+            <button id="btn"><a href="headHome.php">Search Complaint</a></button>
+            <button id="btn"><a href="h_logout.php">Logout</a></button>
+            <!-- <button id="btn"><a href="headlogin.php">Head Login</a></button> -->
+        </nav>
+    </header>
+    <!-- <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -97,7 +110,7 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
     <div class="video" style="margin-top: 5%">
         <div class="center-container">
             <div class="bg-agile">
