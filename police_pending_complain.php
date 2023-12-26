@@ -10,6 +10,7 @@
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="user-styles.css">
+    <link rel="stylesheet" href="reg-styles.css">
     <?php
     session_start();
     if (!isset($_SESSION['x']))
@@ -38,48 +39,34 @@
     $result = mysqli_query($conn, "SELECT c_id,type_crime,d_o_c,location FROM complaint where p_id='$p_id' and pol_status='In Process' order by c_id desc");
     ?>
     <script>
-        function f1() {
-            var sta2 = document.getElementById("ciid").value;
-            var x2 = sta2.indexOf(' ');
-            if (sta2 != "" && x2 >= 0) {
-                document.getElementById("ciid").value = "";
-                alert("Blank Field Found");
-            }
+    function f1() {
+        var sta2 = document.getElementById("ciid").value;
+        var x2 = sta2.indexOf(' ');
+        if (sta2 != "" && x2 >= 0) {
+            document.getElementById("ciid").value = "";
+            alert("Blank Field Found");
         }
+    }
     </script>
 </head>
 
-<body>
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="home.php"><b>Crime Portal</b></a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="official_login.php">Official Login</a></li>
-                    <li><a href="policelogin.php">Police Login</a></li>
-                    <li class="active"><a href="police_pending_complain.php">Police Home</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="police_pending_complain.php">Pending Complaints</a></li>
-                    <li><a href="police_complete.php">Completed Complaints</a></li>
-                    <li><a href="p_logout.php">Logout &nbsp <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
+<body style="background: linear-gradient(to bottom right, #1111a7, #c1a7ac);">
+    <header>
+        <div class="logo-section">
+            <a href="home.php"><img src="images/crs.png" /></a>
+            <button id="btn-home"><a href="home.php">Home</a></button>
         </div>
-    </nav>
+        <nav id="nbr">
+            <button id="btn"><a href="police_complete.php">Completed Cases</a></button>
+            <button id="btn"><a href="p_logout.php">Logout</a></button>
+        </nav>
+    </header>
+    <div style="text-align:center; font-size:30px; color:black; margin-top: 2%; font-weight:700 ;">Pending Complaints
+    </div>
 
     <form style="margin-top: 7%; margin-left: 40%;" method="post">
         <input type="text" name="cid"
-            style="width: 250px; height: 30px; background-color:white; color:grey; margin-top:5px;"
+            style="width: 250px; height: 40px; background: #141212; color: white; border:2px solid white;border-radius: 8px; margin-top:5px;"
             placeholder="&nbsp Complaint ID" onfocusout="f1()" required id="ciid">
         <div>
             <input class="btn btn-primary" type="submit" value="Search" name="s2"
@@ -102,23 +89,23 @@
             <?php
             while ($rows = mysqli_fetch_assoc($result)) {
                 ?>
-                <tbody style="background-color: white; color: black;">
-                    <tr>
-                        <td>
-                            <?php echo $rows['c_id']; ?>
-                        </td>
-                        <td>
-                            <?php echo $rows['type_crime']; ?>
-                        </td>
-                        <td>
-                            <?php echo $rows['d_o_c']; ?>
-                        </td>
-                        <td>
-                            <?php echo $rows['location']; ?>
-                        </td>
-                    </tr>
-                </tbody>
-                <?php
+            <tbody style="background-color: #543030; color: black;">
+                <tr>
+                    <td>
+                        <?php echo $rows['c_id']; ?>
+                    </td>
+                    <td>
+                        <?php echo $rows['type_crime']; ?>
+                    </td>
+                    <td>
+                        <?php echo $rows['d_o_c']; ?>
+                    </td>
+                    <td>
+                        <?php echo $rows['location']; ?>
+                    </td>
+                </tr>
+            </tbody>
+            <?php
             }
             ?>
         </table>

@@ -52,33 +52,33 @@
     }
     ?>
     <script>
-    function f1() {
-        var sta = document.getElementById("pname").value;
-        var sta1 = document.getElementById("pid").value;
-        var sta2 = document.getElementById("pspec").value;
-        var sta3 = document.getElementById("pas").value;
-        var x = sta.trim();
-        var x1 = sta1.indexOf(' ');
-        var x2 = sta2.trim();
-        var x3 = sta3.indexOf(' ');
-        if (sta != "" && x == "") {
-            document.getElementById("pname").value = "";
-            document.getElementById("pname1p").focus();
-            alert("Space Not Allowed");
-        } else if (sta1 != "" && x1 >= 0) {
-            document.getElementById("pid").value = "";
-            document.getElementById("pid").focus();
-            alert("Space Not Allowed");
-        } else if (sta2 != "" && x2 == "") {
-            document.getElementById("pspec").value = "";
-            document.getElementById("pspec").focus();
-            alert("Space Not Allowed");
-        } else if (sta3 != "" && x3 >= 0) {
-            document.getElementById("pas").value = "";
-            document.getElementById("pas").focus();
-            alert("Space Not Allowed");
+        function f1() {
+            var sta = document.getElementById("pname").value;
+            var sta1 = document.getElementById("pid").value;
+            var sta2 = document.getElementById("pspec").value;
+            var sta3 = document.getElementById("pas").value;
+            var x = sta.trim();
+            var x1 = sta1.indexOf(' ');
+            var x2 = sta2.trim();
+            var x3 = sta3.indexOf(' ');
+            if (sta != "" && x == "") {
+                document.getElementById("pname").value = "";
+                document.getElementById("pname1p").focus();
+                alert("Space Not Allowed");
+            } else if (sta1 != "" && x1 >= 0) {
+                document.getElementById("pid").value = "";
+                document.getElementById("pid").focus();
+                alert("Space Not Allowed");
+            } else if (sta2 != "" && x2 == "") {
+                document.getElementById("pspec").value = "";
+                document.getElementById("pspec").focus();
+                alert("Space Not Allowed");
+            } else if (sta3 != "" && x3 >= 0) {
+                document.getElementById("pas").value = "";
+                document.getElementById("pas").focus();
+                alert("Space Not Allowed");
+            }
         }
-    }
     </script>
 </head>
 
@@ -96,7 +96,6 @@
             <button id="btn"><a href="h_logout.php">Logout</a></button>
         </nav>
     </header>
-
     <div class="video" style="margin-top: 2%">
         <div class="center-container">
             <div class="bg-agile">
