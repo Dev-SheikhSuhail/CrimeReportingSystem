@@ -67,7 +67,8 @@
     </header>
 
     <div style="margin-top: 10%;margin-left: 45%">
-        <a href="police_add.php"><input type="button" name="add" value="Add Police Officer" class="btn btn-primary"></a>
+        <a href="police_add.php"><input type="button" name="add" value="Add Police Officer" class="btn btn-primary"
+                id="bttn"></a>
     </div>
 
     <div style="padding:50px;">

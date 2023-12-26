@@ -38,8 +38,7 @@
     ?>
 </head>
 
-<body
-    style="color: black;background-image: url(images/regi_bg.jpeg);background-size: 100%;background-repeat: no-repeat;">
+<body style="background: linear-gradient(to bottom right, #1111a7, #c1a7ac);">
     <header>
         <div class="logo-section">
             <a href="home.php"><img src="images/crs.png" /></a>
