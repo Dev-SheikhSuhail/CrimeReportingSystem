@@ -41,20 +41,20 @@
     $result = mysqli_query($conn, "select p_id,p_name,spec,location from police where location='$location'");
     ?>
     <script>
-    function f1() {
+        function f1() {
 
-        var sta2 = document.getElementById("ciid").value;
-        var x2 = sta2.indexOf(' ');
-        if (sta2 != "" && x2 >= 0) {
-            document.getElementById("ciid").value = "";
-            alert("Blank Field Not Allowed");
+            var sta2 = document.getElementById("ciid").value;
+            var x2 = sta2.indexOf(' ');
+            if (sta2 != "" && x2 >= 0) {
+                document.getElementById("ciid").value = "";
+                alert("Blank Field Not Allowed");
+            }
+
         }
-
-    }
     </script>
 </head>
 
-<body style="background-color: #dfdfdf">
+<body style="background: linear-gradient(to bottom right, #1111a7, #c1a7ac);">
     <header>
         <div class="logo-section">
             <a href="home.php"><img src="images/crs.png" /></a>
@@ -86,24 +86,24 @@
             while ($rows = mysqli_fetch_assoc($result)) {
                 ?>
 
-            <tbody style="background-color: #543030; color: black;">
-                <tr>
-                    <td>
-                        <?php echo $rows['p_id']; ?>
-                    </td>
-                    <td>
-                        <?php echo $rows['p_name']; ?>
-                    </td>
-                    <td>
-                        <?php echo $rows['spec']; ?>
-                    </td>
-                    <td>
-                        <?php echo $rows['location']; ?>
-                    </td>
-                </tr>
-            </tbody>
+                <tbody style="background-color: #543030; color: black;">
+                    <tr>
+                        <td>
+                            <?php echo $rows['p_id']; ?>
+                        </td>
+                        <td>
+                            <?php echo $rows['p_name']; ?>
+                        </td>
+                        <td>
+                            <?php echo $rows['spec']; ?>
+                        </td>
+                        <td>
+                            <?php echo $rows['location']; ?>
+                        </td>
+                    </tr>
+                </tbody>
 
-            <?php
+                <?php
             }
             ?>
         </table>
