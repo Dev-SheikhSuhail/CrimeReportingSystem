@@ -39,7 +39,7 @@
 </head>
 
 <body
-    style="color: black;background-image: url(images/locker.jpeg);background-size: 100%;background-repeat: no-repeat;">
+    style="color: black;background-image: url(images/regi_bg.jpeg);background-size: 100%;background-repeat: no-repeat;">
     <header>
         <div class="logo-section">
             <a href="home.php"><img src="images/crs.png" /></a>
@@ -47,19 +47,7 @@
         </div>
         <div style="font-size:24px;">Head Login</div>
     </header>
-    <!-- <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="home.php"><b>Crime Portal</b></a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="official_login.php">Official Login</a></li>
-                    <li class="active"><a href="headlogin.php">Head Login</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav> -->
+
     <div align="center">
         <div class="form" style="margin-top: 15%">
             <form method="post">

@@ -39,27 +39,27 @@
     }
     ?>
     <script>
-    function f1() {
+        function f1() {
 
-        var sta2 = document.getElementById("exampleInputEmail1").value;
-        var sta3 = document.getElementById("exampleInputPassword1").value;
-        var x2 = sta2.indexOf(' ');
-        var x3 = sta3.indexOf(' ');
-        if (sta2 != "" && x2 >= 0) {
-            document.getElementById("exampleInputEmail1").value = "";
-            document.getElementById("exampleInputEmail1").focus();
-            alert("Space Not Allowed");
-        } else if (sta3 != "" && x3 >= 0) {
-            document.getElementById("exampleInputPassword1").value = "";
-            document.getElementById("exampleInputPassword1").focus();
-            alert("Space Not Allowed");
+            var sta2 = document.getElementById("exampleInputEmail1").value;
+            var sta3 = document.getElementById("exampleInputPassword1").value;
+            var x2 = sta2.indexOf(' ');
+            var x3 = sta3.indexOf(' ');
+            if (sta2 != "" && x2 >= 0) {
+                document.getElementById("exampleInputEmail1").value = "";
+                document.getElementById("exampleInputEmail1").focus();
+                alert("Space Not Allowed");
+            } else if (sta3 != "" && x3 >= 0) {
+                document.getElementById("exampleInputPassword1").value = "";
+                document.getElementById("exampleInputPassword1").focus();
+                alert("Space Not Allowed");
+            }
         }
-    }
     </script>
 </head>
 
 <body
-    style="color: black;background-image: url(images/locker.jpeg);background-size: 100%;background-repeat: no-repeat;">
+    style="color: black;background-image: url(images/regi_bg.jpeg);background-size: 100%;background-repeat: no-repeat;">
     <header>
         <div class="logo-section">
             <a href="home.php"><img src="images/crs.png" /></a>

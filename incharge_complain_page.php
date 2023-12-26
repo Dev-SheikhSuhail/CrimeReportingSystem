@@ -53,14 +53,14 @@
     $result = mysqli_query($conn, $query);
     ?>
     <script>
-        function f1() {
-            var sta2 = document.getElementById("ciid").value;
-            var x2 = sta2.indexOf(' ');
-            if (sta2 != "" && x2 >= 0) {
-                document.getElementById("ciid").value = "";
-                alert("Blank Field Not Allowed");
-            }
+    function f1() {
+        var sta2 = document.getElementById("ciid").value;
+        var x2 = sta2.indexOf(' ');
+        if (sta2 != "" && x2 >= 0) {
+            document.getElementById("ciid").value = "";
+            alert("Blank Field Not Allowed");
         }
+    }
     </script>
 </head>
 
@@ -75,7 +75,6 @@
             <button id="btn"><a href="inc_logout.php">Logout</a></button>
         </nav>
     </header>
-
     <form style="margin-top: 7%; margin-left: 40%;" method="post">
         <input type="text" name="cid"
             style="width: 250px; height: 40px; background: #141212; color: white; border:2px solid white;border-radius: 8px;"
@@ -102,29 +101,29 @@
             <?php
             while ($rows = mysqli_fetch_assoc($result)) {
                 ?>
-                <tbody style="background-color: #543030; color: black;">
-                    <tr>
-                        <td>
-                            <?php echo $rows['c_id']; ?>
-                        </td>
-                        <td>
-                            <?php echo $rows['type_crime']; ?>
-                        </td>
-                        <td>
-                            <?php echo $rows['d_o_c']; ?>
-                        </td>
-                        <td>
-                            <?php echo $rows['location']; ?>
-                        </td>
-                        <td>
-                            <?php echo $rows['inc_status']; ?>
-                        </td>
-                        <td>
-                            <?php echo $rows['p_id']; ?>
-                        </td>
-                    </tr>
-                </tbody>
-                <?php
+            <tbody style="background-color: #543030; color: black;">
+                <tr>
+                    <td>
+                        <?php echo $rows['c_id']; ?>
+                    </td>
+                    <td>
+                        <?php echo $rows['type_crime']; ?>
+                    </td>
+                    <td>
+                        <?php echo $rows['d_o_c']; ?>
+                    </td>
+                    <td>
+                        <?php echo $rows['location']; ?>
+                    </td>
+                    <td>
+                        <?php echo $rows['inc_status']; ?>
+                    </td>
+                    <td>
+                        <?php echo $rows['p_id']; ?>
+                    </td>
+                </tr>
+            </tbody>
+            <?php
             }
             ?>
 

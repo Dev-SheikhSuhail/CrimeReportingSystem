@@ -31,31 +31,20 @@
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="user-styles.css">
+    <link rel="stylesheet" href="reg-styles.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="home.php"><b>Crime Portal</b></a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="Incharge_complain_page.php">View Complaints</a></li>
-                    <li class="active"><a href="incharge_complain_details.php">Details Of Complaints</a></li>
-                    <li><a href="inc_logout.php">Logout &nbsp <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
+    <header>
+        <div class="logo-section">
+            <a href="home.php"><img src="images/crs.png" /></a>
+            <button id="btn-home"><a href="home.php">Home</a></button>
         </div>
-    </nav>
+        <nav id="nbr">
+            <button id="btn"><a href="Incharge_complain_page.php">View Cases</a></button>
+            <button id="btn"><a href="inc_logout.php">Logout</a></button>
+        </nav>
+    </header>
 
     <div style="padding:50px; margin-top:10px;">
         <table class="table table-bordered">
@@ -70,7 +59,7 @@
             <?php
             while ($rows = mysqli_fetch_assoc($result)) {
                 ?>
-                <tbody style="background-color: white; color: black;">
+                <tbody style="background-color: #543030; color: black;">
                     <tr>
 
                         <td>
@@ -104,7 +93,7 @@
             <?php
             while ($rows1 = mysqli_fetch_assoc($res2)) {
                 ?>
-                <tbody style="background-color: white; color: black;">
+                <tbody style="background-color: #543030; color: black;">
                     <tr>
 
                         <td>

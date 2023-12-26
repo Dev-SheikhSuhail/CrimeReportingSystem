@@ -24,7 +24,7 @@ CREATE TABLE `complaint` (
 
 -- Dumping data for table `complaint`
 INSERT INTO `complaint` (`c_id`, `a_no`, `location`, `type_crime`, `d_o_c`, `description`, `inc_status`, `pol_status`, `p_id`) VALUES
-(1, 123214521452, 'Pulwama', 'Robbery', '2018-12-06', 'My Home Has Been Robbed.', 'Assigned', 'ChargeSheet Filed', 'PO4');
+(1, 123214521452, 'Pulwama', 'Robbery', '2023-12-06', 'My Home Has Been Robbed.', 'Assigned', 'ChargeSheet Filed', 'PO4');
 
 -- --------------------------------------------------------
 
@@ -84,13 +84,16 @@ CREATE TABLE `update_case` (
 
 -- Dumping data for table `update_case`
 INSERT INTO `update_case` (`c_id`, `d_o_u`, `case_update`) VALUES
-(1, '2018-12-17 10:32:06', 'Criminal Verified'),
-(1, '2018-12-20 10:32:12', 'Criminal Caught'),
-(1, '2018-12-21 10:32:15', 'Criminal Interrogated'),
-(1, '2018-12-21 10:45:21', 'Criminal Accepted the Crime'),
-(1, '2018-12-21 11:30:26', 'Criminal Charged'),
-(1, '2018-12-22 10:30:51', 'The case has been moved to Court.'),
-(1, '2018-12-25 11:30:59', 'Criminal Verified');
+(1, '2023-11-17 10:32:06', 'Case Checking'),
+(1, '2023-11-18 10:00:06', 'Investigation Started'),
+(1, '2023-11-20 12:32:06', 'Investigation Continues'),
+(1, '2023-11-22 10:00:06', 'Some Suspects Found'),
+(1, '2023-11-23 11:00:12', 'Few Persons Arrested'),
+(1, '2023-11-25 10:32:15', 'Criminal Interrogated'),
+(1, '2023-12-01 10:45:21', 'Criminal Accepted the Crime'),
+(1, '2023-12-02 11:30:26', 'Criminal Charged'),
+(1, '2023-12-05 10:30:51', 'The case has been moved to Court'),
+(1, '2023-12-08 11:30:59', 'Court Decision Pending');
 
 -- --------------------------------------------------------
 

@@ -10,6 +10,7 @@
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="user-styles.css">
+    <link rel="stylesheet" href="reg-styles.css">
     <?php
     session_start();
     if (!isset($_SESSION['x']))
@@ -55,29 +56,18 @@
     </script>
 </head>
 
-<body>
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="home.php"><b>Crime Portal</b></a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="police_pending_complain.php">View Complaints</a></li>
-                    <li class="active"><a href="police_complainDetails.php">Details Of Complaints</a></li>
-                    <li><a href="p_logout.php">Logout &nbsp <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
+<body style="background: linear-gradient(to bottom right, #1111a7, #c1a7ac);">
+    <header>
+        <div class="logo-section">
+            <a href="home.php"><img src="images/crs.png" /></a>
+            <button id="btn-home"><a href="home.php">Home</a></button>
         </div>
-    </nav>
+        <nav id="nbr">
+            <button id="btn"><a href="police_pending_complain.php">Pending Cases</a></button>
+            <button id="btn"><a href="p_logout.php">Logout</a></button>
+        </nav>
+    </header>
+
     <div style="padding:50px; margin-top:10px;">
         <table class="table table-bordered">
             <thead class="thead-dark" style="background-color: black; color: white;">
@@ -93,7 +83,7 @@
             <?php
             while ($rows = mysqli_fetch_assoc($result)) {
                 ?>
-                <tbody style="background-color: white; color: black;">
+                <tbody style="background-color: #543030; color: black;">
                     <tr>
                         <td>
                             <?php echo $rows['c_id']; ?>
@@ -132,7 +122,7 @@
             <?php
             while ($rows1 = mysqli_fetch_assoc($res2)) {
                 ?>
-                <tbody style="background-color: white; color: black;">
+                <tbody style="background-color: #543030; color: black;">
                     <tr>
                         <td>
                             <?php echo $rows1['d_o_u']; ?>
@@ -149,13 +139,14 @@
     </div>
 
     <div style="width: 100%; height: 250px;">
-        <div style="width: 50%;float: left;height: 250px; background-color: #dcdcdc">
+        <div style="width: 50%;float: left;height: 250px;">
             <form method="post">
                 <h5 style="text-align: center;"><b>Complaint ID</b></h5>
-                <input type="text" name="cid" style="margin-left: 47%; width: 50px;" disabled
+                <input type="text" name="cid" style="margin-left: 47%; width: 50px; background: Black;" disabled
                     value="<?php echo "$cid" ?>">
                 <select class="form-control"
-                    style="align-content: center;margin-top: 20px; margin-left: 35%; width: 180px;" name="update">
+                    style="align-content: center;margin-top: 20px; margin-left: 35%; width: 180px; background: #141212; color: white;height: 40px;border:2px solid white;border-radius: 8px;"
+                    name="update">
                     <option>Criminal Verified</option>
                     <option>Criminal Caught</option>
                     <option>Criminal Interrogated</option>
@@ -166,10 +157,11 @@
                     style="margin-top: 10px; margin-left: 40%;">
             </form>
         </div>
-        <div style="width: 50%;float: right;height: 250px; background-color: #dfdfdf;">
+        <div style="width: 50%;float: right;height: 250px;">
             <form method="post">
                 <textarea name="final_report" cols="40" rows="5" placeholder="Final Report"
-                    style="margin-top: 20px;margin-left: 20px;" id="ciid" onfocusout="f1()" required></textarea>
+                    style="margin-top: 20px;margin-left: 20px; color:black; border: 2px black solid; border-radius:4px;"
+                    id="ciid" onfocusout="f1()" required></textarea>
                 <div>
                     <input class="btn btn-danger" type="submit" value="Close Case" name="close"
                         style="margin-left: 20px; margin-top: 10px; margin-bottom:20px;">
