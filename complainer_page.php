@@ -62,15 +62,15 @@ if (isset($_POST['s'])) {
 ?>
 
 <script>
-    function f1() {
-        var sta1 = document.getElementById("desc").value;
-        var x1 = sta1.trim();
-        if (sta1 != "" && x1 == "") {
-            document.getElementById("desc").value = "";
-            document.getElementById("desc").focus();
-            alert("Space Found");
-        }
+function f1() {
+    var sta1 = document.getElementById("desc").value;
+    var x1 = sta1.trim();
+    if (sta1 != "" && x1 == "") {
+        document.getElementById("desc").value = "";
+        document.getElementById("desc").focus();
+        alert("Space Found");
     }
+}
 </script>
 
 <head>
@@ -97,35 +97,8 @@ if (isset($_POST['s'])) {
             <button id="btn"><a href="logout.php">Logout</a></button>
         </nav>
     </header>
-    <!-- <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="home.php"><b>Home</b></a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="userlogin.php">User Login</a></li>
-                    <li class="active"><a href="complainer_page.php">User Home</a></li>
-                </ul>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="complainer_page.php">Register New Complaint</a></li>
-                    <li><a href="complainer_complain_history.php">Complaint History</a></li>
-                    <li><a href="logout.php">Logout &nbsp <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav> -->
-
-
-    <div class="video" style="margin-top: 5%">
+    <div class="video" style="margin-top: 2px">
         <div class="center-container">
             <div class="bg-agile">
                 <div class="login-form">
@@ -133,10 +106,10 @@ if (isset($_POST['s'])) {
                     <h2 style="color:white">Welcome
                         <?php echo "$u_name" ?>
                     </h2>
-                    </p><br>
+                    </p>
                     <p>
                     <h2>New Complaint</h2>
-                    </p><br>
+                    </p>
                     <form action="#" method="post" style="color: gray">Aadhar
                         <input type="text" name="aadhar_number" placeholder="Aadhar Number" required="" disabled
                             value=<?php echo "$a_no"; ?>>
@@ -148,10 +121,10 @@ if (isset($_POST['s'])) {
                                 $loc = mysqli_query($conn, "select location from police_station");
                                 while ($row = mysqli_fetch_array($loc)) {
                                     ?>
-                                    <option>
-                                        <?php echo $row[0]; ?>
-                                    </option>
-                                    <?php
+                                <option>
+                                    <?php echo $row[0]; ?>
+                                </option>
+                                <?php
                                 }
                                 ?>
 
